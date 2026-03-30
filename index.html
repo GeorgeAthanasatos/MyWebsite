@@ -81,15 +81,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .project-link{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-700);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:gap 0.2s}
 .project-link:hover{gap:10px}
 .project-card.featured{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0;background:var(--green-900)}
-.featured-left{padding:48px;color:var(--white)}
+.featured-left{padding:48px}
 .featured-left .project-cat{color:var(--green-300)}
 .featured-left .project-title{color:var(--white);font-size:28px}
 .featured-left .project-desc{color:rgba(255,255,255,0.65)}
 .featured-left .project-tag{border-color:rgba(151,200,122,0.3);color:var(--green-300)}
 .featured-left .project-link{color:var(--green-300)}
-.featured-right{background:var(--green-800);display:flex;align-items:center;justify-content:center;padding:48px;min-height:240px}
-.featured-visual{width:100%;height:200px;border:1px solid rgba(151,200,122,0.2);display:flex;align-items:center;justify-content:center}
-.featured-visual-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:rgba(151,200,122,0.4);text-transform:uppercase}
+.featured-right{background:var(--green-800);display:flex;flex-direction:column;justify-content:center;padding:48px;gap:16px}
+.featured-stat{border-left:2px solid var(--green-500);padding-left:16px}
+.featured-stat-num{font-family:'Playfair Display',serif;font-size:28px;color:var(--green-300);line-height:1;margin-bottom:4px}
+.featured-stat-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45)}
+.project-card.mackay{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0;border-bottom:1px solid var(--border)}
+.mackay-left{padding:48px;border-right:1px solid var(--border)}
+.mackay-right{padding:48px;background:var(--green-50);display:flex;flex-direction:column;gap:20px}
+.mackay-phase{border-left:2px solid var(--green-400);padding:12px 16px;background:var(--white);margin-bottom:0}
+.mackay-phase-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--green-600);margin-bottom:4px}
+.mackay-phase-title{font-size:13px;color:var(--ink);font-weight:500;margin-bottom:3px}
+.mackay-phase-desc{font-size:12px;color:var(--muted);line-height:1.5;font-weight:300}
+.mackay-moves{list-style:none;margin-top:4px}
+.mackay-move{font-size:12px;color:var(--slate);padding:7px 0;border-bottom:1px solid var(--border-light);display:flex;align-items:flex-start;gap:8px;font-weight:300}
+.mackay-move::before{content:'→';color:var(--green-500);font-size:11px;flex-shrink:0;margin-top:1px}
 #skills{background:var(--green-900);border-top:none}
 #skills .section-label{color:var(--green-300)}
 #skills .section-label::before{background:var(--green-500)}
@@ -127,7 +138,7 @@ footer p{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;col
 .hero-tags{animation:fadeUp .5s .26s ease both}
 .hero-cta{animation:fadeUp .5s .32s ease both}
 @media(max-width:900px){
-  nav{padding:16px 24px}.nav-links{gap:20px}.hero{grid-template-columns:1fr}.hero-left{padding:60px 24px}.hero-right{display:none}.section{padding:64px 24px}.about-grid{grid-template-columns:1fr;gap:40px}.projects-grid{grid-template-columns:1fr}.project-card.featured{grid-column:span 1;grid-template-columns:1fr}.featured-right{display:none}.skills-grid{grid-template-columns:1fr}.exp-item{grid-template-columns:1fr;gap:8px}footer{flex-direction:column;gap:8px;text-align:center}
+  nav{padding:16px 24px}.nav-links{gap:20px}.hero{grid-template-columns:1fr}.hero-left{padding:60px 24px}.hero-right{display:none}.section{padding:64px 24px}.about-grid{grid-template-columns:1fr;gap:40px}.projects-grid{grid-template-columns:1fr}.project-card.featured,.project-card.mackay{grid-column:span 1;grid-template-columns:1fr}.featured-right,.mackay-right{display:none}.skills-grid{grid-template-columns:1fr}.exp-item{grid-template-columns:1fr;gap:8px}footer{flex-direction:column;gap:8px;text-align:center}
 }
 </style>
 </head>
@@ -213,23 +224,73 @@ footer p{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;col
   </div>
   <div class="projects-grid">
 
-    <!-- FEATURED: spans full width, urban planning -->
     <div class="project-card featured">
       <div class="featured-left">
-        <div class="project-cat cat-planning"><span class="project-cat-dot"></span>Urban Planning</div>
-        <h3 class="project-title">Zoning Reform Analysis — Montreal Case Study</h3>
-        <p class="project-desc">An in-depth examination of zoning regulations and their impact on housing affordability and neighbourhood density in Montreal. Analysing how land use policy shapes community outcomes, with a focus on mixed-use potential and climate-conscious design.</p>
+        <div class="project-cat cat-planning"><span class="project-cat-dot"></span>Urban Planning · URBS 333</div>
+        <h3 class="project-title">Mackay Park — The Future of Quartier Concordia</h3>
+        <p class="project-desc">A team proposal to pedestrianize the Bishop–Mackay–Guy corridor at Concordia's SGW campus. The project reclaims roadway space, expands green infrastructure, and builds a connected public-realm network to address urban heat, vehicle dominance, and fragmented public space.</p>
         <div class="project-tags">
-          <span class="project-tag">Zoning</span><span class="project-tag">Land Use</span><span class="project-tag">Housing Policy</span><span class="project-tag">Community</span>
+          <span class="project-tag">Pedestrianization</span>
+          <span class="project-tag">Green Infrastructure</span>
+          <span class="project-tag">Climate Resilience</span>
+          <span class="project-tag">Public Realm</span>
+          <span class="project-tag">Tactical Urbanism</span>
+          <span class="project-tag">Community Engagement</span>
         </div>
-        <a href="#contact" class="project-link">Request details →</a>
+        <a href="#contact" class="project-link">Request full proposal →</a>
       </div>
       <div class="featured-right">
-        <div class="featured-visual"><span class="featured-visual-label">Project visual</span></div>
+        <div class="featured-stat">
+          <div class="featured-stat-num">100–150</div>
+          <div class="featured-stat-label">New trees proposed</div>
+        </div>
+        <div class="featured-stat">
+          <div class="featured-stat-num">3</div>
+          <div class="featured-stat-label">Implementation phases (1–50 yr)</div>
+        </div>
+        <div class="featured-stat">
+          <div class="featured-stat-num">6</div>
+          <div class="featured-stat-label">Key spatial interventions</div>
+        </div>
+        <div class="featured-stat">
+          <div class="featured-stat-num">80–100</div>
+          <div class="featured-stat-label">New seating capacity</div>
+        </div>
       </div>
     </div>
 
-    <!-- SECOND urban planning card — full width -->
+    <div class="project-card mackay">
+      <div class="mackay-left">
+        <div class="project-cat cat-planning" style="margin-bottom:20px"><span class="project-cat-dot"></span>Key Moves</div>
+        <ul class="mackay-moves">
+          <li class="mackay-move">Reclaim one lane of De Maisonneuve for crossings and planting</li>
+          <li class="mackay-move">Transform Mackay into a pedestrian-first street park</li>
+          <li class="mackay-move">Pedestrianize Bishop as a calmer connector</li>
+          <li class="mackay-move">Expand Norman Bethune Square using part of the Learning Square plot</li>
+          <li class="mackay-move">Integrate stormwater and canopy as climate infrastructure</li>
+          <li class="mackay-move">Link all spaces into one connected public landscape system</li>
+        </ul>
+      </div>
+      <div class="mackay-right">
+        <div class="project-cat cat-planning" style="margin-bottom:4px"><span class="project-cat-dot"></span>Implementation Phases</div>
+        <div class="mackay-phase">
+          <div class="mackay-phase-label">Phase 1 · 1–5 years</div>
+          <div class="mackay-phase-title">Test</div>
+          <div class="mackay-phase-desc">Temporary closures, removable bollards, modular seating, and participatory consultation to test pedestrianization safely.</div>
+        </div>
+        <div class="mackay-phase">
+          <div class="mackay-phase-label">Phase 2 · 10–25 years</div>
+          <div class="mackay-phase-title">Transition</div>
+          <div class="mackay-phase-desc">Permanent pedestrian-priority redesign, fixed seating, curb changes, and planted zones replacing tactical materials.</div>
+        </div>
+        <div class="mackay-phase">
+          <div class="mackay-phase-label">Phase 3 · 25–50 years</div>
+          <div class="mackay-phase-title">Transform</div>
+          <div class="mackay-phase-desc">Full street-park buildout, stormwater integration, final lane reallocation on De Maisonneuve, and Learning Square coordination.</div>
+        </div>
+      </div>
+    </div>
+
     <div class="project-card cat-planning" style="grid-column:span 2">
       <div class="project-cat"><span class="project-cat-dot"></span>Urban Planning</div>
       <h3 class="project-title">Climate Resilience & Sustainability Planning</h3>
@@ -240,7 +301,6 @@ footer p{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;col
       <a href="#contact" class="project-link">Request details →</a>
     </div>
 
-    <!-- CS projects — two columns -->
     <div class="project-card cat-cs">
       <div class="project-cat"><span class="project-cat-dot"></span>Computer Science</div>
       <h3 class="project-title">Empirium — Gladiator Game</h3>
